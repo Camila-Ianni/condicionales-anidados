@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class OrdenarDescendente {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Ingrese el número A: ");
+        int a = sc.nextInt();
+        System.out.print("Ingrese el número B: ");
+        int b = sc.nextInt();
+        System.out.print("Ingrese el número C: ");
+        int c = sc.nextInt();
+
+        int mayor, medio, menor;
+
+        if (a > b && a > c) {
+            mayor = a;
+            if (b > c) {
+                medio = b;
+                menor = c;
+            } else {
+                medio = c;
+                menor = b;
+            }
+        } else if (b > a && b > c) {
+            mayor = b;
+            if (a > c) {
+                medio = a;
+                menor = c;
+            } else {
+                medio = c;
+                menor = a;
+            }
+        } else {
+            mayor = c;
+            if (a > b) {
+                medio = a;
+                menor = b;
+            } else {
+                medio = b;
+                menor = a;
+            }
+        }
+
+        System.out.println("Orden descendente: " + mayor + ", " + medio + ", " + menor);
+    }
+}
