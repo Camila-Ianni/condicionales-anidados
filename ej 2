@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class AumentoSueldo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Ingrese la categoría (A, B, C): ");
+        char categoria = sc.next().toUpperCase().charAt(0);
+
+        System.out.print("Ingrese el sueldo: ");
+        double sueldo = sc.nextDouble();
+
+        double aumento = 0;
+
+        if (categoria == 'A') {
+            aumento = sueldo * 0.15;
+        } else if (categoria == 'B') {
+            aumento = sueldo * 0.10;
+        } else if (categoria == 'C') {
+            aumento = sueldo * 0.05;
+        } else {
+            System.out.println("Categoría no válida.");
+        }
+
+        double nuevoSueldo = sueldo + aumento;
+        System.out.println("El nuevo sueldo es: " + nuevoSueldo);
+    }
+}
